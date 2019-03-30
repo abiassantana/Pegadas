@@ -13,13 +13,10 @@
     <link rel="stylesheet" href="../../css/style_base.css" type="text/css">
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="../../css/style_signin.css" type="text/css">
+    <link rel="stylesheet" href="../../css/style_cadastro.css" type="text/css">
 
     <!-- Font Roboto Mono -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-    
-    <!-- Market -->
-    <link rel="stylesheet" href="../../font/Market%20Web%20Regular.ttf">
 
     <title>Login Desenvolvedor</title>
 </head>
@@ -54,39 +51,43 @@
         </div>
         <!-- Fim da navbar -->
     </nav>
+    <!-- Cadastro -->
+    <section id="cadastro">
+        <form class="form-group">
+            <!-- BTN Entre -->
+            <a class="btn btn-sm btn-primary pl-4 pr-4 pt-2 pb-2 mt-n3 mb-3" id="btn-entra1">Cadastre-se</a>
+            <!-- Informe campos -->
+            <h5 class="mb-5">(Todos os campos devem ser preenchidos)</h5>
 
-    <h1 id="title">#Deixe a sua <br> Pegada</h1>
+            <div class="row">
+                <div class="col pr-4">
+                    <!-- Input nome -->
+                    <input type="name" id="inputname" class="form-control mb-5" placeholder="Nome" required="" autofocus="">
+                </div>
+                <div class="col pl-4">
+                    <!-- Input sobre nome -->
+                    <input type="lastname" id="inputlastname" class="form-control mb-5" placeholder="Sobrenome" required="" autofocus="">
+                </div>
+            </div>
 
-    <!-- Signin -->
-    <section id="signin">
-        <form class="form-signin">
-            <button class="btn btn-sm btn-primary pl-5 pr-4 mt-n3 mb-5" type="submit" id="btn-entra1">Entrar</button>
+            <!-- Input email -->
+            <input type="email" id="inputEmail" class="form-control mb-5" placeholder="E-mail" required="" autofocus="">
 
+            <!-- Input senha -->
+            <input type="password" id="inputPassword" class="form-control mb-5" placeholder="Senha" required="" autofocus="">
 
-            <input type="email" id="inputEmail" class="form-control mb-5" placeholder="Informe seu e-mail" required="" autofocus="">
+            <!-- Input senha -->
+            <input type="password" id="inputCPassword" class="form-control mb-4" placeholder="Confirme a senha" required="" autofocus="">
 
+            <!-- BTN cadastrar -->
+            <button class="btn btn-sm btn-primary pl-4 pr-4 " type="submit" id="btn-entra2">Cadastrar</button>
 
-            <input type="password" id="inputPassword" class="form-control mb-5" placeholder="Senha" required="">
+            <p class="text-muted">
+                <!-- Ancora retorno de menu -->
+                <a c href="#">Volte ao menu</a>
 
-            <button class="btn btn-success pl-4 pr-4 " type="submit" id="btn-entra2">Entrar</button>
-
-            <p class="mt-4 mb-3 text-muted">
-                <!-- Ancora criar conta -->
-                <a href="#" style="color: #12C790" class="mr-1">Criar conta</a>
-                <a>|</a>
-                <!-- Ancora Esqueceu a senha? -->
-                <a href="#" style="color: #12C790" class="ml-1">Esqueceu a senha?</a></p>
         </form>
-        <!-- Fim do signin -->
     </section>
-
-    <!-- Footer da pagina -->
-    <footer class="mx-auto">
-        <!-- Btn do Footer -->
-        <a class="btn btn-primary mx-auto pr-4 pl-4 pt-2 pb-2 mt-n4" href="#" role="button">Parceiros</a>
-
-        <!-- Fim do Footer -->
-    </footer>
 </body>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
