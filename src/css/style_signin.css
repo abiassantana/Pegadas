@@ -11,11 +11,11 @@ body {
 #title {
     color: white;
     position: absolute;
-    font-size: 80px;
+    font-size: 90px;
     top: 12%;
-    right: 13%;
-    font-family: url(../font/Market%20Web%20Regular.ttf);
-    font-family: sans-serif;
+    right: 10%;
+    font-family: 'Market Pro';
+
 }
 
 
@@ -88,4 +88,9 @@ footer .btn {
     border-radius: 0;
     color: #FFFFFF;
     font-size: 80%;
+}
+
+@font-face {
+    font-family: Market Pro;
+    src: url(../font/Market%20Web%20Regular.ttf);
 }
