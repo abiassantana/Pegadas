@@ -3,8 +3,31 @@ const router = express.Router();
 const db = require('./../models/index')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
+const auth = require('./../middlewares/auth');
+const isWoner = require('./../middlewares/woner');
+const secret = require('./../config/secret');
 let developer =  db.Developer;
+
+router.post('/login', function(req, res) {
+    developer.findOne({where: {userName: req.body.userName}}).then((dev) => {
+        if (dev) {
+            bcrypt.compare(req.body.password, dev.password).then((result) => {
+            if (result) { 
+                // password is correct
+                const token = jwt.sign(dev.get({plain: true}), secret.secret);            
+                res.json({message: 'User authenticated', token: token}); 
+            } else { 
+                // password is wrong
+                res.json({message: 'Wrong password'});
+            }               
+        });         
+        } else {            
+            res.json({message: 'User not found'});        
+        }    
+    }); 
+});
+
+
 router.post('', function(req, res){
     try{
         bcrypt.hash(req.body.password, 12).then((result) =>{
@@ -23,11 +46,20 @@ router.post('', function(req, res){
     
 });
 
-router.get('/developers', function(req, res){
-    developer.findAll().then(developers => {
+router.get('/developers', auth.verify, function(req, res){
+    developer.findAll({attributes: {exclude: ['password']}}).then(developers => {
         res.send(developers);
-    });
+    });    
 });
+
+const profile = function perfil(req, res, dev){
+    if (dev) {
+        res.send(dev);
+    } else {
+        res.json({error: 'developer not found'});
+    }
+}
+
 router.get('/:id', function(req, res) {
     developer.findOne({
         where: req.params,
@@ -35,13 +67,10 @@ router.get('/:id', function(req, res) {
             exclude: ['password']
           }
     }).then(dev => {
-        if (dev) {
-            res.send(dev);
-        } else {
-            res.json({error: 'developer not found'});
-        }
+        isWoner.verifyWoner(req, res, dev, profile);
     });
 });
+
 router.get('/perfil/:id', function(req, res) {
     developer.findOne({
         where: req.params,
@@ -57,28 +86,37 @@ router.get('/perfil/:id', function(req, res) {
     });
 });
 
+const att = function att(req, res, dev){
+    dev.update(req.body, {where: dev.id}).then(() => {
+        res.send({message: 'developer updated', developer: req.body});
+    });
+}
+
 router.put('/', function(req,res){
     try {
         developer.findByPk(req.body.id).then(dev => {
             if (dev) {
-                dev.update(req.body, {where: dev.id}).then(() => {
-                    res.send({message: 'developer updated', developer: req.body});
-                });
+                isWoner.verifyWoner(req, res, dev, att);
+                
             } else {
                 res.json({error: 'developer not found'});
             }
         });    
     } catch (error) {
-        return res.status(400).send({error: 'falha na atualizacao.'})
+        return res.status(400).send({error: 'falha na atualizacao.', err: error});
     } 
 });
+
+const del = function deletar(req, res, dev){
+    developer.destroy({where: req.body}).then(() => {
+        res.send({message: 'developer has deleted'});
+    });
+}
 
 router.delete('/', function(req, res){
     developer.findByPk(req.body.id).then(dev => {
         if(dev) {
-            developer.destroy({where: req.body}).then(() => {
-                res.send({message: 'developer has deleted'});
-            });
+            isWoner.verifyWoner(req, res, dev, del);
         } else {
             res.json({error: "developer not found"});
         }
