@@ -41,6 +41,9 @@ module.exports = (sequelize, DataTypes) => {
         },
       }
 
+    },
+    perfilPhoto: {
+      type:DataTypes.BLOB('long'),
     }
   }, {});
   Developer.associate = function(models) {

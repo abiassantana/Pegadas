@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 const auth = require('./../middlewares/auth');
 const isWoner = require('./../middlewares/woner');
 const secret = require('./../config/secret');
+const upload = require('./../config/multerConfig');
+
 let developer =  db.Developer;
 
 router.post('/login', function(req, res) {
@@ -27,6 +29,27 @@ router.post('/login', function(req, res) {
     }); 
 });
 
+const uploadFile = function upPhoto(req, res, dev){
+    dev.profilePhoto = req.file.buffer;
+    developer.update(dev).then(() => {
+      res.json({message:'File uploaded successfully! -> filename = ' + req.file.originalname});
+    }).catch(err => {
+      console.log(err);
+      res.json({msg: 'Error', detail: err});
+    });
+}
+router.put('/photo/:id', upload.single('photo'),  function(req, res){
+    //console.log(req.params.id);
+    developer.findByPk(req.params.id).then(dev => {
+        if(dev){
+            isWoner.verifyWoner(req, res, dev, uploadFile);
+        }else{
+            res.json({message: 'desenvolvedor nao encontrado'})
+        }
+        
+    });
+
+});
 
 router.post('', function(req, res){
     try{
