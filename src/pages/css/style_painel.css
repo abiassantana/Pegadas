@@ -1,0 +1,86 @@
+header,
+.header {
+    position: fixed;
+    width: 100;
+    background-color: #FFFFFF;
+    color: white;
+    border-bottom: 1px solid #8D8181;
+    font-family: 'Roboto Mono';
+}
+
+header #main-nav,
+.header #main-nav {
+    position: absolute;
+    left: 10px;
+    width: 84.3%;
+    height: 90vh;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    font-size: 80%;
+}
+
+header #main-nav li,
+.header #main-nav li {
+    height: 4em;
+    width: 6em;
+    padding: 1em;
+
+}
+
+header #main-nav li a,
+.header #main-nav li a {
+    color: #8D8181;
+
+}
+
+header #brand-container,
+.header #brand-container {
+    text-align: center;
+    letter-spacing: 0px;
+}
+
+header #hamburger,
+.header #hamburger {
+    color: #FFFCFC;
+    background-color: #2C4771;
+    border: none;
+    border-radius: 0;
+    width: 90%;
+    height: 100%;
+}
+
+header #hamburg6.5r,
+.header #hamburger {
+    border: none;
+    border-radius: 0;
+}
+
+header #hamburger .fa-bars {
+    font-size: 300%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #28F250;
+    margin-right: 14%;
+}
+
+
+#hamburger-title {
+    font-size: 70%;
+    color: #FFFCFC;
+}
+
+#hamburger-title:hover {
+    border: none;
+}
+
+.nav-link {
+    color: #8D8181;
+    font-size: 100%;
+}
+
+.nav-link:hover {
+    color: #8D8181;
+    border-width: 0 0 4px;
+    border-style: solid;
+    border-color: #28F250;
+}
