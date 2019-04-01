@@ -1,20 +1,24 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config/secret');
-const verify = (req, res, next) =>{
+const verify = (req, res, next) => {
     //console.log(req.headers);
     const token = req.headers['x-access-token'];
-    if(token){
+    if (token) {
         jwt.verify(token, config.secret, (err, decoded) => {
-        if(err){
-            res.json({message: 'authentication failed'});
-        }else{
+            if (err) {
+                res.json({
+                    message: 'authentication failed'
+                });
+            } else {
 
-            console.log(decoded);
-            next();
-        }
+                console.log(decoded);
+                next();
+            }
         });
-    }else{
-        res.json({message: 'authentication required'});
+    } else {
+        res.json({
+            message: 'authentication required'
+        });
     }
 }
 
