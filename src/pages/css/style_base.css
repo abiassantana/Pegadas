@@ -1,13 +1,14 @@
 body {
-      font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
 }
+
 /* -----------------------------------*/
 /* ---------->>> Navbar <<<-----------*/
 /* -----------------------------------*/
 
 .navbar {
     background-color: #FFFFFF;
-    
+
 }
 
 .navbar #logo {
@@ -38,4 +39,15 @@ body {
 
 .navbar-toggler .navbar-toggler-icon {
     font-size: 130%;
+}
+
+.nav-link:hover {
+    color: #8D8181;
+    border-width: 0 0 4px;
+    border-style: solid;
+    border-color: #28F250;
+}
+
+#btn-cadastreJogo:hover {
+    border: none;
 }
