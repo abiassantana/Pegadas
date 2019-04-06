@@ -12,6 +12,9 @@
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../css/style_painel.css">
 
+    <!-- Table -->
+    <link rel="stylesheet" href="../../css/style_painel_table.css">
+
     <!-- Icones -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -78,7 +81,71 @@
         </div>
     </header>
     <!-- Table -->
-    
+    <section id="table-relatorio" class=" pt-5">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="table-responsive">
+                    <table class="table table-borderless mx-auto">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Número de acessos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pt-4 pb-4" id="trbl">Jogo das letrinhas</td>
+                                <td class="pt-4 pb-4">Jogo</td>
+                                <td class="pt-4 pb-4"><i class="fas fa-wifi-1" id="estado-verde"></i></td>
+                                <td class="pt-4 pb-4" id="trbr">33</td>
+                            </tr>
+                            <tr>
+                                <td class="pt-4 pb-4" id="trbl">Jogo das letrinhas</td>
+                                <td class="pt-4 pb-4">Simulador</td>
+                                <td class="pt-4 pb-4"><i class="fas fa-wifi-1" id="estado-amarela"></i></td>
+                                <td class="pt-4 pb-4" id="trbr">129</td>
+                            </tr>
+                            <tr>
+                                <td class="pt-4 pb-4" id="trbl">Jogo das letrinhas</td>
+                                <td class="pt-4 pb-4">Jogo</td>
+                                <td class="pt-4 pb-4"><i class="fas fa-wifi-1" id="estado-vermelha"></i></td>
+                                <td class="pt-4 pb-4" id="trbr">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="table-responsive">
+                    <table class="table table-borderless mx-auto">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr scope="col" style="background-color: #FFFFFF;">
+                                <td><i class="fas fa-wifi-1" id="estado-verde"></i></td>
+                                <td>Aprovado</td>
+                            </tr>
+                            <tr scope="col" style="background-color: #FFFFFF;">
+                                <td><i class="fas fa-wifi-1" id="estado-amarela"></i></td>
+                                <td>Análise</td>
+                            </tr>
+                            <tr scope="col" style="background-color: #FFFFFF;">
+                                <td><i class="fas fa-wifi-1" id="estado-vermelha"></i></td>
+                                <td>Reprovado</td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 </body>

@@ -1,6 +1,9 @@
 var mainNav = $('#main-nav');
 var hamburger = $('#hamburger');
 var icon = $('.fa-bars');
+var table = $('#table-relatorio');
+var table = $('#tabela-dev');
+var title = $('#title-table-dev');
 
 hamburger.attr('data-click-state', 0);
 
@@ -13,6 +16,14 @@ icon.css({
 
 });
 
+table.css({
+    'padding-left': '20%'
+});
+
+title.css({
+    'padding-left': '10%'
+});
+
 hamburger.click(function () {
 
     if (hamburger.attr('data-click-state') == '0') {
@@ -21,13 +32,22 @@ hamburger.click(function () {
 
         $(this).attr('data-click-state', 1);
         mainNav.css({
-            'display': 'none'
+            'display': 'none',
+            'position': 'absolute'
 
         });
         icon.css({
             'background-color': '#2C4771'
 
         });
+        table.css({
+            'padding-left': '0%'
+        });
+
+        title.css({
+            'padding-left': '5%'
+        });
+
 
     } else {
         $(this).attr('data-click-state', 0);
@@ -42,6 +62,15 @@ hamburger.click(function () {
             'background-color': '#28F250'
 
         });
+
+        table.css({
+            'padding-left': '20%'
+        });
+
+        title.css({
+            'padding-left': '10%'
+        });
+
         console.log(1);
     }
 });
