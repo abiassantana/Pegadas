@@ -8,7 +8,9 @@ var title = $('#title-table-dev');
 hamburger.attr('data-click-state', 0);
 
 mainNav.css({
-    'top': '100%'
+    'top': '100%',
+    'display': 'none'
+    
 });
 
 icon.css({
@@ -32,7 +34,7 @@ hamburger.click(function () {
 
         $(this).attr('data-click-state', 1);
         mainNav.css({
-            'display': 'none',
+            'display': 'block',
             'position': 'absolute'
 
         });
@@ -53,7 +55,7 @@ hamburger.click(function () {
         $(this).attr('data-click-state', 0);
         mainNav.css({
             'top': '100%',
-            'display': 'block',
+            'display': 'none',
             'position': 'absolute'
 
 
