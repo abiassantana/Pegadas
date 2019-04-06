@@ -10,6 +10,7 @@ header,
     color: white;
     border-bottom: 1px solid #8D8181;
     font-family: 'Roboto Mono';
+    z-index: 2;
 }
 
 header #main-nav,
@@ -21,6 +22,7 @@ header #main-nav,
     background-color: #FFFFFF;
     border: 1px solid #000000;
     text-align: center;
+
 }
 
 header #main-nav li,
@@ -126,18 +128,21 @@ header #hamburger .fa-bars {
 /* -----------------------------------*/
 
 #conteudo {
-    position: absolute;
     text-align: center;
     font-family: 'Roboto Mono';
     color: #2C4771;
-    top: 30%;
-    right: 15%;
+    z-index: 1;
+}
+
+#conteudo .row {
+    padding-top: 5%;
 }
 
 #conteudo h1 {
     font-size: 270%;
     font-weight: 600;
     margin-bottom: 3%;
+    padding-top: 15%;
 }
 
 #conteudo h2 {
@@ -157,3 +162,9 @@ header #hamburger .fa-bars {
     width: 150px;
 }
 
+#conteudo img {
+    width: 80%;
+    height: 80%;
+    margin-top: 5%;
+
+}
