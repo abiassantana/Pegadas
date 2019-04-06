@@ -20,8 +20,8 @@ hamburger.click(function () {
         console.log(0);
 
         $(this).attr('data-click-state', 1);
-        mainNav.animate({
-            'opacity': '0'
+        mainNav.css({
+            'display': 'none'
 
         });
         icon.css({
@@ -31,9 +31,10 @@ hamburger.click(function () {
 
     } else {
         $(this).attr('data-click-state', 0);
-        mainNav.animate({
+        mainNav.css({
             'top': '100%',
-            'opacity': '1'
+            'display': 'block',
+            'position': 'absolute'
 
 
         });
