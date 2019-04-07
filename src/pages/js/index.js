@@ -10,7 +10,7 @@ hamburger.attr('data-click-state', 0);
 mainNav.css({
     'top': '100%',
     'display': 'none'
-    
+
 });
 
 icon.css({
@@ -43,12 +43,13 @@ hamburger.click(function () {
 
         });
         table.css({
-            'padding-left': '0%'
+            'padding-left': '20%'
         });
 
         title.css({
-            'padding-left': '5%'
+            'padding-left': '10%'
         });
+
 
 
     } else {
@@ -64,13 +65,12 @@ hamburger.click(function () {
             'background-color': '#28F250'
 
         });
-
         table.css({
-            'padding-left': '20%'
+            'padding-left': '0%'
         });
 
         title.css({
-            'padding-left': '10%'
+            'padding-left': '5%'
         });
 
         console.log(1);

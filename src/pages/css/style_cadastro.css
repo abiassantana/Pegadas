@@ -74,3 +74,17 @@ body {
     font-size: 60%;
     color: #12C790;
 }
+
+#cadastro .form-control:placeholder-shown:hover {
+    height: 38px;
+    padding-right: 75%;
+    padding-bottom: 5%;
+    font-size: 60%;
+}
+
+#cadastro .form-control:placeholder-shown:active {
+    height: 38px;
+    padding-right: 75%;
+    padding-bottom: 5%;
+    font-size: 60%;
+}
