@@ -38,7 +38,6 @@ header #main-nav li,
 header #main-nav li a,
 .header #main-nav li a {
     color: #8D8181;
-
 }
 
 header #brand-container,
@@ -55,6 +54,9 @@ header #hamburger,
     border-radius: 0;
     width: 100%;
     height: 100%;
+    padding: 0;
+    padding-left: 3%;
+    padding-top: 1.5%;
 }
 
 header #hamburg6.5r,
@@ -142,7 +144,7 @@ header #hamburger .fa-bars {
     font-size: 270%;
     font-weight: 600;
     margin-bottom: 3%;
-    padding-top: 15%;
+    padding-top: 20%;
 }
 
 #conteudo h2 {

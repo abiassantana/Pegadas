@@ -21,6 +21,7 @@ body {
 .navbar ul li a {
     font-size: 110%;
     color: #8D8181;
+    height: 40px;
 }
 
 #btn-cadastreJogo {
