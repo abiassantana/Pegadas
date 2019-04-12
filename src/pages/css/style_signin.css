@@ -44,6 +44,17 @@ body {
     font-size: 90%;
 }
 
+#signin .form-control:placeholder-shown:hover {
+    font-size: 50%;
+    padding-bottom: 08.3%;
+}
+
+#signin .form-control:placeholder-shown:active {
+    font-size: 50%;
+    padding-bottom: 08.3%;
+}
+
+
 #btn-entra1 {
     margin-right: 90%;
     background-color: #2C4771;
@@ -94,4 +105,3 @@ footer .btn {
     font-family: Market Pro;
     src: url(../font/Market%20Web%20Regular.ttf);
 }
-

@@ -12,6 +12,9 @@
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../css/style_painel.css">
 
+    <!-- Table -->
+    <link rel="stylesheet" href="../../css/style_painel_table.css">
+
     <!-- Icones -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -39,7 +42,6 @@
                     <div class="row">
                         <i class="fas fa-bars pl-3 pr-4 mb-n2 mt-n2 pt-3 pb-3"></i>
                         <a class="nav-link ml-n4" href="#" id="hamburger-title">Painel de Gerenciamento<br>De conta</a>
-
                     </div>
                 </button>
                 <!-- Itens menu hamburger -->
@@ -53,7 +55,6 @@
                         <li><a href="#" id="main-nav-alts"><i class="fas fa-lock mr-3"></i>Alterar Senha</a></li>
                         <!-- nome sa -->
                         <li><a href="#" id="main-nav-sair"><i class="fas fa-door-open mr-3"></i>Sair</a></li>
-
                     </ul>
                 </div>
             </div>
@@ -61,13 +62,13 @@
             <div class="col-9" id="brand-container">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link mr-5 ml-5 pr-3 pl-3 mt-3 " href="#">Desenvolvedores</a>
+                        <a class="nav-link mr-5 ml-5 pr-3 pl-3 mt-3" href="../painel-dev/painel-dev-devs.html">Desenvolvedores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mr-5 ml-5  pr-3 pl-3 mt-3" href="#">Cadastrar Atividade</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-5 ml-5  pr-3 pl-3 mt-3" href="#">Relatórios</a>
+                        <a class="nav-link mr-5 ml-5  pr-3 pl-3 mt-3" href="../painel-dev/painel-dev-rela.html">Relatórios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mr-5 ml-5  pr-3 pl-3 pr-5 mt-3" href="#">Ajuda</a>
@@ -79,11 +80,17 @@
     </header>
 
     <section id="conteudo">
-        <h1>#Deixe a sua Pegada</h1>
-        <h2>O pegadas é um projeto sem fins lucrativos<br>Que atua diretamente com a sociedade, junte-se a nós .</h2>
-        <a class="btn btn-success btn-sm pt-0 pb-0" href="#" role="button">Cadastre<br>seu jogo!</a>
+        <div class="row mx-auto">
+            <div class="col-lg-6">
+                <img src="../../img/background/Grupo.png">
+            </div>
+            <div class="col-lg-6" style="padding-right: 5%;">
+                <h1>#Deixe a sua Pegada</h1>
+                <h2>O pegadas é um projeto sem fins lucrativos<br>Que atua diretamente com a sociedade, junte-se a nós .</h2>
+                <a class="btn btn-success btn-sm pt-0 pb-0" href="#" role="button">Cadastre<br>seu jogo!</a>
+            </div>
+        </div>
     </section>
-
 
 </body>
 
@@ -91,7 +98,10 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 <!-- Scrip menu header -->
-<script src="../../js/index.js"></script>
+<script src="../../js/menuHamburger.js"></script>
+
+<!-- Scrip menu header - perfil -->
+<script src="../../js/btnMenuHamburgerPerfil.js"></script>
 
 
 <!-- Optional JavaScript -->
