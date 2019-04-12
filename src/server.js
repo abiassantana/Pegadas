@@ -1,10 +1,18 @@
 let express = require('express');
 let app = express();
+let cors = require('cors');
+
 //Data base
 const db = require('./models/index');
 
 var bodyParser = require('body-parser');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-type");
+  next();
+})
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({
     extended: true

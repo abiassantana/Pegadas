@@ -15,7 +15,7 @@ let developer =  db.Developer;
 router.post('/login', function (req, res) {
     developer.findOne({
         where: {
-            userName: req.body.userName
+            email: req.body.email
         }
     }).then((dev) => {
         if (dev) {
@@ -25,7 +25,7 @@ router.post('/login', function (req, res) {
                     const token = jwt.sign(dev.get({
                         plain: true
                     }), secret.secret);
-                    res.json({
+                    res.status(200).send({
                         message: 'User authenticated',
                         token: token
                     });
